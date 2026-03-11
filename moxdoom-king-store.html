@@ -1,0 +1,2155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MoxDoom 👑 King Store – Instagram Growth</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #f5c518;
+    --gold-light: #ffe066;
+    --dark: #0a0a0a;
+    --dark2: #111111;
+    --dark3: #1a1a1a;
+    --dark4: #222222;
+    --white: #f5f5f5;
+    --gray: #888;
+    --green: #00e676;
+    --insta1: #f09433;
+    --insta3: #dc2743;
+    --insta5: #bc1888;
+    /* Service accent colors */
+    --acc-followers: #f5c518;
+    --acc-likes:     #ff4d6d;
+    --acc-comments:  #7c3aed;
+    --acc-views:     #0ea5e9;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--dark);
+    color: var(--white);
+    font-family: 'Outfit', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 80%, rgba(245,197,24,0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(168,85,247,0.03) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    text-align: center;
+    padding: 60px 20px 40px;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(245,197,24,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .brand-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--dark3);
+    border: 1px solid rgba(245,197,24,0.3);
+    border-radius: 50px;
+    padding: 8px 20px;
+    font-size: 13px;
+    color: var(--gold);
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    animation: fadeDown 0.6s ease both;
+  }
+  .brand-badge .dot {
+    width: 8px; height: 8px;
+    background: var(--green);
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+  }
+  @keyframes pulse {
+    0%,100%{opacity:1;transform:scale(1)}
+    50%{opacity:.5;transform:scale(1.3)}
+  }
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 10vw, 100px);
+    letter-spacing: 4px;
+    line-height: 0.95;
+    background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, #c8940a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeDown 0.7s ease 0.1s both;
+  }
+  .hero-sub {
+    font-size: 16px;
+    color: var(--gray);
+    margin-top: 14px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    animation: fadeDown 0.7s ease 0.2s both;
+  }
+  .hero-sub span { color: var(--white); font-weight: 600; }
+  @keyframes fadeDown {
+    from{opacity:0;transform:translateY(-20px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+  .insta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 10px 22px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, var(--insta1), var(--insta3), var(--insta5));
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: fadeDown 0.7s ease 0.3s both;
+  }
+  .insta-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(188,24,136,0.4);
+  }
+  .insta-icon { width: 20px; height: 20px; }
+
+  /* ── TAB NAV ── */
+  .tabs-wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 40px auto 0;
+    padding: 0 20px;
+  }
+  .tabs {
+    display: flex;
+    background: var(--dark2);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px;
+    padding: 6px;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    flex: 1;
+    min-width: 110px;
+    padding: 11px 10px;
+    border: none;
+    border-radius: 12px;
+    background: transparent;
+    color: var(--gray);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.25s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    white-space: nowrap;
+  }
+  .tab-btn:hover { color: var(--white); background: rgba(255,255,255,0.05); }
+  .tab-btn.active {
+    color: #000;
+    font-weight: 700;
+  }
+  .tab-btn[data-tab="followers"].active { background: var(--acc-followers); }
+  .tab-btn[data-tab="likes"].active    { background: var(--acc-likes); color:#fff; }
+  .tab-btn[data-tab="comments"].active { background: var(--acc-comments); color:#fff; }
+  .tab-btn[data-tab="views"].active    { background: var(--acc-views); color:#fff; }
+
+  /* ── SECTIONS ── */
+  .section { display: none; }
+  .section.active { display: block; }
+
+  /* ── DIVIDER / TITLES ── */
+  .divider {
+    width: 60px; height: 3px;
+    border-radius: 2px;
+    margin: 0 auto 40px;
+  }
+  .divider.followers { background: linear-gradient(90deg, var(--acc-followers), transparent); }
+  .divider.likes     { background: linear-gradient(90deg, var(--acc-likes), transparent); }
+  .divider.comments  { background: linear-gradient(90deg, var(--acc-comments), transparent); }
+  .divider.views     { background: linear-gradient(90deg, var(--acc-views), transparent); }
+
+  .section-title {
+    text-align: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    letter-spacing: 3px;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+  .section-desc {
+    text-align: center;
+    color: var(--gray);
+    font-size: 14px;
+    margin-bottom: 36px;
+  }
+
+  /* ── PACKAGES ── */
+  .packages-section {
+    padding: 40px 20px 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 18px;
+  }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--dark2);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 20px;
+    padding: 26px 22px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    animation: fadeUp 0.5s ease both;
+  }
+  @keyframes fadeUp {
+    from{opacity:0;transform:translateY(28px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+  .card:nth-child(1){animation-delay:.04s}
+  .card:nth-child(2){animation-delay:.08s}
+  .card:nth-child(3){animation-delay:.12s}
+  .card:nth-child(4){animation-delay:.16s}
+  .card:nth-child(5){animation-delay:.20s}
+  .card:nth-child(6){animation-delay:.24s}
+
+  /* accent top line & hover per service */
+  .card::before {
+    content:'';
+    position:absolute;
+    top:0;left:0;right:0;
+    height:2px;
+    opacity:0;
+    transition:opacity 0.3s;
+  }
+  .card:hover::before { opacity:1; }
+  .card:hover { transform:translateY(-6px); }
+
+  .followers-grid .card:hover { border-color:rgba(245,197,24,.4); box-shadow:0 20px 50px rgba(0,0,0,.5),0 0 0 1px rgba(245,197,24,.15); }
+  .followers-grid .card::before { background:linear-gradient(90deg,transparent,var(--acc-followers),transparent); }
+  .likes-grid     .card:hover { border-color:rgba(255,77,109,.4); box-shadow:0 20px 50px rgba(0,0,0,.5),0 0 0 1px rgba(255,77,109,.15); }
+  .likes-grid     .card::before { background:linear-gradient(90deg,transparent,var(--acc-likes),transparent); }
+  .comments-grid  .card:hover { border-color:rgba(124,58,237,.4); box-shadow:0 20px 50px rgba(0,0,0,.5),0 0 0 1px rgba(124,58,237,.15); }
+  .comments-grid  .card::before { background:linear-gradient(90deg,transparent,var(--acc-comments),transparent); }
+  .views-grid     .card:hover { border-color:rgba(14,165,233,.4); box-shadow:0 20px 50px rgba(0,0,0,.5),0 0 0 1px rgba(14,165,233,.15); }
+  .views-grid     .card::before { background:linear-gradient(90deg,transparent,var(--acc-views),transparent); }
+
+  .card.popular { border-color: rgba(245,197,24,.45); background:linear-gradient(160deg,#1a1700 0%,var(--dark2) 60%); }
+  .card.popular-likes    { border-color:rgba(255,77,109,.45); background:linear-gradient(160deg,#1a0008 0%,var(--dark2) 60%); }
+  .card.popular-comments { border-color:rgba(124,58,237,.45); background:linear-gradient(160deg,#0d0020 0%,var(--dark2) 60%); }
+  .card.popular-views    { border-color:rgba(14,165,233,.45); background:linear-gradient(160deg,#00101a 0%,var(--dark2) 60%); }
+
+  .popular-badge {
+    position:absolute;
+    top:14px;right:14px;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    padding:4px 10px;
+    border-radius:20px;
+    background:var(--gold);
+    color:#000;
+  }
+  .popular-badge.red    { background:var(--acc-likes); color:#fff; }
+  .popular-badge.purple { background:var(--acc-comments); color:#fff; }
+  .popular-badge.blue   { background:var(--acc-views); color:#fff; }
+
+  .card-icon   { font-size:30px; margin-bottom:10px; }
+  .card-amount {
+    font-family:'Bebas Neue',sans-serif;
+    font-size:40px;
+    letter-spacing:2px;
+    line-height:1;
+  }
+  .followers-grid .card-amount { color:var(--acc-followers); }
+  .likes-grid     .card-amount { color:var(--acc-likes); }
+  .comments-grid  .card-amount { color:var(--acc-comments); }
+  .views-grid     .card-amount { color:var(--acc-views); }
+
+  .card-label {
+    font-size:12px;
+    color:var(--gray);
+    text-transform:uppercase;
+    letter-spacing:2px;
+    margin-bottom:14px;
+    margin-top:2px;
+  }
+  .card-features {
+    list-style:none;
+    margin-bottom:18px;
+  }
+  .card-features li {
+    font-size:13px;
+    color:#aaa;
+    padding:3px 0;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .card-features li::before { content:'✓'; color:var(--green); font-weight:700; font-size:12px; }
+  .card-price {
+    font-family:'Bebas Neue',sans-serif;
+    font-size:32px;
+    letter-spacing:1px;
+    color:var(--white);
+    margin-bottom:14px;
+  }
+  .card-price span { font-family:'Outfit',sans-serif; font-size:13px; color:var(--gray); font-weight:400; }
+
+  /* BUY BUTTON */
+  .buy-btn {
+    width:100%;
+    padding:12px;
+    border-radius:12px;
+    border:none;
+    cursor:pointer;
+    font-family:'Outfit',sans-serif;
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    transition:all 0.25s;
+    background:var(--dark4);
+  }
+  .followers-grid .buy-btn { color:var(--acc-followers); border:1px solid rgba(245,197,24,.3); }
+  .followers-grid .buy-btn:hover,.card.popular .buy-btn { background:var(--acc-followers); color:#000; border-color:transparent; }
+  .followers-grid .buy-btn:hover { transform:scale(1.02); }
+
+  .likes-grid .buy-btn { color:var(--acc-likes); border:1px solid rgba(255,77,109,.3); }
+  .likes-grid .buy-btn:hover,.card.popular-likes .buy-btn { background:var(--acc-likes); color:#fff; border-color:transparent; }
+  .likes-grid .buy-btn:hover { transform:scale(1.02); }
+
+  .comments-grid .buy-btn { color:var(--acc-comments); border:1px solid rgba(124,58,237,.3); }
+  .comments-grid .buy-btn:hover,.card.popular-comments .buy-btn { background:var(--acc-comments); color:#fff; border-color:transparent; }
+  .comments-grid .buy-btn:hover { transform:scale(1.02); }
+
+  .views-grid .buy-btn { color:var(--acc-views); border:1px solid rgba(14,165,233,.3); }
+  .views-grid .buy-btn:hover,.card.popular-views .buy-btn { background:var(--acc-views); color:#000; border-color:transparent; }
+  .views-grid .buy-btn:hover { transform:scale(1.02); }
+
+  /* ── HOW IT WORKS ── */
+  .how-section {
+    padding: 20px 20px 60px;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 20px;
+  }
+  .step {
+    text-align:center;
+    padding:26px 18px;
+    background:var(--dark2);
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:16px;
+  }
+  .step-num {
+    font-family:'Bebas Neue',sans-serif;
+    font-size:44px;
+    color:rgba(245,197,24,.13);
+    line-height:1;
+    margin-bottom:4px;
+  }
+  .step-title { font-weight:600; font-size:15px; margin-bottom:6px; }
+  .step-desc  { font-size:13px; color:var(--gray); line-height:1.6; }
+
+  /* ── PAYMENT ── */
+  .payment-section {
+    padding: 20px 20px 60px;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .payment-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 16px;
+  }
+  .pay-card {
+    background:var(--dark2);
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:16px;
+    padding:22px 18px;
+    text-align:center;
+    transition:border-color .2s,transform .2s;
+  }
+  .pay-card:hover { border-color:rgba(245,197,24,.3); transform:translateY(-3px); }
+  .pay-icon  { font-size:34px; margin-bottom:8px; }
+  .pay-label { font-size:11px; text-transform:uppercase; letter-spacing:2px; color:var(--gray); margin-bottom:6px; }
+  .pay-value { font-weight:600; font-size:14px; color:var(--white); word-break:break-all; }
+  .pay-value a { color:inherit; text-decoration:none; }
+  .pay-value a:hover { color:var(--gold); }
+
+  /* ── CTA ── */
+  .cta-section {
+    padding:20px 20px 80px;
+    max-width:600px;
+    margin:0 auto;
+    text-align:center;
+    position:relative;
+    z-index:1;
+  }
+  .cta-box {
+    background:linear-gradient(135deg,rgba(245,197,24,.08),rgba(245,197,24,.02));
+    border:1px solid rgba(245,197,24,.25);
+    border-radius:24px;
+    padding:40px 32px;
+  }
+  .cta-box h2 {
+    font-family:'Bebas Neue',sans-serif;
+    font-size:40px;
+    letter-spacing:2px;
+    color:var(--gold);
+    margin-bottom:10px;
+  }
+  .cta-box p { color:var(--gray); font-size:14px; margin-bottom:28px; line-height:1.7; }
+  .cta-btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+  .cta-btn {
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:13px 26px;
+    border-radius:12px;
+    font-family:'Outfit',sans-serif;
+    font-weight:700;
+    font-size:14px;
+    text-decoration:none;
+    transition:all .25s;
+  }
+  .cta-btn.whatsapp { background:#25D366; color:#000; }
+  .cta-btn.whatsapp:hover { background:#1ebe5a; box-shadow:0 8px 24px rgba(37,211,102,.35); transform:translateY(-2px); }
+  .cta-btn.email { background:var(--dark3); color:var(--gold); border:1px solid rgba(245,197,24,.3); }
+  .cta-btn.email:hover { background:var(--gold); color:#000; transform:translateY(-2px); }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align:center;
+    padding:24px;
+    color:#444;
+    font-size:13px;
+    border-top:1px solid rgba(255,255,255,.05);
+    position:relative;
+    z-index:1;
+  }
+  footer a { color:var(--gold); text-decoration:none; }
+
+  /* ── MODAL ── */
+  .modal-overlay {
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.85);
+    z-index:100;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    backdrop-filter:blur(8px);
+  }
+  .modal-overlay.active { display:flex; }
+  .modal {
+    background:var(--dark2);
+    border:1px solid rgba(245,197,24,.3);
+    border-radius:24px;
+    padding:36px 32px;
+    max-width:440px;
+    width:100%;
+    text-align:center;
+    animation:popIn .3s cubic-bezier(.34,1.56,.64,1) both;
+  }
+  @keyframes popIn {
+    from{opacity:0;transform:scale(.85)}
+    to{opacity:1;transform:scale(1)}
+  }
+  .modal h3 { font-family:'Bebas Neue',sans-serif; font-size:32px; letter-spacing:2px; color:var(--gold); margin-bottom:6px; }
+  .modal .modal-pkg { font-size:14px; color:var(--gray); margin-bottom:24px; }
+  .modal-steps { text-align:left; margin-bottom:24px; }
+  .modal-step { display:flex; gap:12px; align-items:flex-start; padding:10px 0; border-bottom:1px solid rgba(255,255,255,.06); }
+  .modal-step:last-child { border-bottom:none; }
+  .modal-step-num {
+    background:rgba(245,197,24,.15);
+    color:var(--gold);
+    font-weight:700;
+    font-size:12px;
+    width:24px;height:24px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+    margin-top:2px;
+  }
+  .modal-step-text { font-size:13px; color:#ccc; line-height:1.5; }
+  .modal-step-text strong { color:var(--white); }
+  .modal-close {
+    padding:11px 28px;
+    background:var(--dark4);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:10px;
+    color:var(--gray);
+    font-family:'Outfit',sans-serif;
+    font-size:14px;
+    cursor:pointer;
+    transition:all .2s;
+  }
+  .modal-close:hover { color:var(--white); border-color:rgba(255,255,255,.3); }
+
+  @media(max-width:480px){
+    .hero h1{font-size:60px}
+    .modal{padding:28px 20px}
+    .tab-btn{font-size:12px;padding:10px 8px;min-width:90px}
+  }
+
+  /* ── AUTH BUTTON IN HEADER ── */
+  .auth-bar {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 12px 24px;
+    gap: 10px;
+  }
+  .auth-bar-btn {
+    padding: 8px 18px;
+    border-radius: 10px;
+    border: 1px solid rgba(245,197,24,.35);
+    background: rgba(245,197,24,.08);
+    color: var(--gold);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all .2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .auth-bar-btn:hover { background: var(--gold); color: #000; }
+  .auth-bar-btn.logout { border-color: rgba(255,255,255,.15); background: transparent; color: var(--gray); }
+  .auth-bar-btn.logout:hover { background: rgba(255,255,255,.08); color: var(--white); }
+  .auth-bar-user {
+    font-size: 13px;
+    color: var(--gray);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .auth-bar-user span { color: var(--gold); font-weight: 600; }
+
+  /* ── AUTH MODAL ── */
+  .auth-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.9);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    backdrop-filter: blur(12px);
+  }
+  .auth-overlay.active { display: flex; }
+  .auth-box {
+    background: var(--dark2);
+    border: 1px solid rgba(245,197,24,.25);
+    border-radius: 28px;
+    padding: 40px 36px;
+    max-width: 420px;
+    width: 100%;
+    animation: popIn .35s cubic-bezier(.34,1.56,.64,1) both;
+  }
+  .auth-logo {
+    text-align: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 4px;
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 4px;
+  }
+  .auth-tagline { text-align: center; color: var(--gray); font-size: 13px; margin-bottom: 28px; }
+  .auth-tabs {
+    display: flex;
+    background: var(--dark3);
+    border-radius: 12px;
+    padding: 4px;
+    margin-bottom: 24px;
+    gap: 4px;
+  }
+  .auth-tab {
+    flex: 1;
+    padding: 9px;
+    border: none;
+    border-radius: 9px;
+    background: transparent;
+    color: var(--gray);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all .2s;
+  }
+  .auth-tab.active { background: var(--gold); color: #000; }
+  .auth-form { display: none; }
+  .auth-form.active { display: block; }
+  .auth-field {
+    margin-bottom: 14px;
+  }
+  .auth-field label {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gray);
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  .auth-field input {
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--dark3);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 12px;
+    color: var(--white);
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color .2s;
+  }
+  .auth-field input:focus { border-color: rgba(245,197,24,.5); }
+  .auth-field input::placeholder { color: #555; }
+  .auth-submit {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 12px;
+    background: var(--gold);
+    color: #000;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all .2s;
+    margin-top: 6px;
+    letter-spacing: .5px;
+  }
+  .auth-submit:hover { background: var(--gold-light); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(245,197,24,.3); }
+  .auth-msg {
+    text-align: center;
+    font-size: 13px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 14px;
+    display: none;
+  }
+  .auth-msg.err  { background: rgba(255,77,77,.12); color: #ff6b6b; border: 1px solid rgba(255,77,77,.25); }
+  .auth-msg.ok   { background: rgba(0,230,118,.1);  color: var(--green); border: 1px solid rgba(0,230,118,.25); }
+  .auth-close-btn {
+    position: absolute;
+    top: 16px; right: 16px;
+    background: none;
+    border: none;
+    color: var(--gray);
+    font-size: 22px;
+    cursor: pointer;
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    transition: background .2s, color .2s;
+  }
+  .auth-close-btn:hover { background: rgba(255,255,255,.08); color: var(--white); }
+  .auth-box { position: relative; }
+
+  /* ── SPIN TAB BUTTON ── */
+  .spin-tab-btn.active { background: linear-gradient(135deg,#a855f7,#7c3aed) !important; color:#fff !important; }
+
+  /* ── SPIN WHEEL ── */
+  .spin-wrap {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    margin: 0 auto 28px;
+  }
+  .spin-pointer {
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 28px;
+    color: var(--gold);
+    z-index: 10;
+    filter: drop-shadow(0 0 8px rgba(245,197,24,.7));
+    line-height: 1;
+  }
+  #spinCanvas {
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px rgba(255,255,255,.06), 0 0 40px rgba(168,85,247,.25), 0 20px 60px rgba(0,0,0,.6);
+    display: block;
+  }
+  .spin-cap {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    width: 54px; height: 54px;
+    background: var(--dark);
+    border: 3px solid rgba(255,255,255,.12);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    z-index: 10;
+    box-shadow: 0 0 20px rgba(0,0,0,.8);
+    pointer-events: none;
+  }
+  .spin-btn {
+    display: block;
+    margin: 0 auto 14px;
+    padding: 15px 48px;
+    background: linear-gradient(135deg, #a855f7, #7c3aed);
+    border: none;
+    border-radius: 14px;
+    color: #fff;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all .25s;
+    box-shadow: 0 8px 30px rgba(168,85,247,.4);
+  }
+  .spin-btn:hover:not(:disabled) { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(168,85,247,.55); }
+  .spin-btn:disabled { opacity: .45; cursor: not-allowed; transform: none; }
+  .spin-hint {
+    text-align: center;
+    font-size: 13px;
+    color: var(--gray);
+    margin-bottom: 28px;
+  }
+  .spin-result {
+    background: var(--dark2);
+    border: 1px solid rgba(168,85,247,.3);
+    border-radius: 22px;
+    padding: 32px 24px;
+    text-align: center;
+    animation: popIn .4s cubic-bezier(.34,1.56,.64,1) both;
+  }
+  .spin-result-icon { font-size: 52px; margin-bottom: 10px; }
+  .spin-result-title { font-family: 'Bebas Neue', sans-serif; font-size: 34px; letter-spacing: 2px; color: var(--gold); margin-bottom: 6px; }
+  .spin-result-sub { font-size: 14px; color: var(--gray); margin-bottom: 18px; }
+  .spin-claim-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    background: #25D366;
+    color: #000;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all .2s;
+  }
+  .spin-claim-btn:hover { background: #1ebe5a; transform: translateY(-2px); }
+
+  /* ── KING CROWN FLOAT ── */
+  @keyframes crownFloat {
+    0%,100%{transform:translateY(0) rotate(-5deg); opacity:.7}
+    50%{transform:translateY(-12px) rotate(5deg); opacity:1}
+  }
+  .crown-float {
+    position:absolute;
+    font-size:28px;
+    pointer-events:none;
+    animation: crownFloat linear infinite;
+    opacity:.6;
+  }
+  /* ── PARTICLES CANVAS ── */
+  #particleCanvas {
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:9999;
+    display:none;
+  }
+  /* ── KING BADGE ── */
+  .king-badge {
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:linear-gradient(135deg,rgba(245,197,24,.15),rgba(245,197,24,.05));
+    border:1px solid rgba(245,197,24,.4);
+    border-radius:50px;
+    padding:5px 16px;
+    font-size:11px;
+    color:var(--gold);
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:14px;
+    animation:fadeDown 0.5s ease both;
+  }
+  /* ── SPIN LOCKED NOTICE ── */
+  .spin-locked {
+    text-align:center;
+    padding:32px 24px;
+    background:var(--dark2);
+    border:1px solid rgba(168,85,247,.25);
+    border-radius:22px;
+    margin-bottom:24px;
+  }
+  .spin-locked-icon { font-size:48px; margin-bottom:12px; }
+  .spin-locked h3 { font-family:'Bebas Neue',sans-serif; font-size:26px; letter-spacing:2px; color:#a855f7; margin-bottom:8px; }
+  .spin-locked p { font-size:14px; color:var(--gray); margin-bottom:18px; }
+  .spin-locked-btn {
+    padding:12px 28px;
+    background:linear-gradient(135deg,#a855f7,#7c3aed);
+    border:none;
+    border-radius:12px;
+    color:#fff;
+    font-family:'Outfit',sans-serif;
+    font-weight:700;
+    font-size:14px;
+    cursor:pointer;
+    transition:all .2s;
+  }
+  .spin-locked-btn:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(168,85,247,.45); }
+  /* ── REMEMBER ME ── */
+  .auth-remember {
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:14px;
+    cursor:pointer;
+    font-size:13px;
+    color:var(--gray);
+    user-select:none;
+  }
+  .auth-remember input[type=checkbox] {
+    width:16px;height:16px;
+    accent-color:var(--gold);
+    cursor:pointer;
+  }
+  .auth-remember:hover { color:var(--white); }
+
+  @media(max-width:480px){
+    .auth-box { padding: 28px 20px; }
+    .spin-wrap { width: 280px; height: 280px; }
+    #spinCanvas { width: 280px; height: 280px; }
+  }
+
+  /* ══════════════════════════════════
+     HYPER ANIMATIONS
+  ══════════════════════════════════ */
+
+  /* Animated aurora background */
+  @keyframes auroraMove {
+    0%   { transform: translate(0%,0%) scale(1); }
+    25%  { transform: translate(3%,-4%) scale(1.05); }
+    50%  { transform: translate(-2%, 5%) scale(0.97); }
+    75%  { transform: translate(4%, 2%) scale(1.03); }
+    100% { transform: translate(0%,0%) scale(1); }
+  }
+  #auroraCanvas {
+    position: fixed; inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.55;
+  }
+
+  /* Cursor glow trail */
+  .cursor-glow {
+    position: fixed;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(245,197,24,0.10) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    transition: left 0.12s ease, top 0.12s ease;
+    mix-blend-mode: screen;
+  }
+
+  /* Shimmer on cards */
+  .card {
+    overflow: hidden;
+  }
+  .card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg,
+      transparent 40%,
+      rgba(255,255,255,0.045) 50%,
+      transparent 60%);
+    transform: translateX(-100%);
+    transition: transform 0s;
+    pointer-events: none;
+  }
+  .card:hover::after {
+    transform: translateX(100%);
+    transition: transform 0.55s ease;
+  }
+
+  /* Glowing gold text on hero h1 */
+  @keyframes goldPulse {
+    0%,100% { filter: drop-shadow(0 0 8px rgba(245,197,24,0.4)); }
+    50%      { filter: drop-shadow(0 0 28px rgba(245,197,24,0.85)) drop-shadow(0 0 55px rgba(245,197,24,0.3)); }
+  }
+  .hero h1 {
+    animation: goldPulse 3s ease-in-out infinite, fadeDown 0.7s ease 0.1s both;
+  }
+
+  /* Animated border on auth-bar */
+  @keyframes borderFlow {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  .auth-bar {
+    background: linear-gradient(90deg, transparent, rgba(245,197,24,0.06), rgba(168,85,247,0.06), transparent);
+    background-size: 300% 300%;
+    animation: borderFlow 6s ease infinite;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  /* Tilt on cards (applied via JS) */
+  .card { transition: transform 0.3s cubic-bezier(0.23,1,0.32,1), border-color 0.3s, box-shadow 0.3s; }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity 0.7s cubic-bezier(0.23,1,0.32,1), transform 0.7s cubic-bezier(0.23,1,0.32,1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Floating orbs */
+  .orb {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(80px);
+    opacity: 0;
+    animation: orbDrift linear infinite;
+    z-index: 0;
+  }
+  @keyframes orbDrift {
+    0%   { opacity:0; transform: translateY(0) scale(1); }
+    10%  { opacity:0.6; }
+    90%  { opacity:0.4; }
+    100% { opacity:0; transform: translateY(-120vh) scale(1.3); }
+  }
+
+  /* Tab button glow on active */
+  .tab-btn.active {
+    box-shadow: 0 0 20px rgba(245,197,24,0.25);
+    transition: box-shadow 0.3s;
+  }
+  .tab-btn[data-tab="likes"].active    { box-shadow: 0 0 20px rgba(255,77,109,0.3); }
+  .tab-btn[data-tab="comments"].active { box-shadow: 0 0 20px rgba(124,58,237,0.3); }
+  .tab-btn[data-tab="views"].active    { box-shadow: 0 0 20px rgba(14,165,233,0.3); }
+  .tab-btn.spin-tab-btn.active         { box-shadow: 0 0 20px rgba(168,85,247,0.4); }
+
+  /* Neon border on popular cards */
+  @keyframes neonBorder {
+    0%,100% { box-shadow: 0 0 8px rgba(245,197,24,0.3), 0 20px 50px rgba(0,0,0,.5); }
+    50%     { box-shadow: 0 0 22px rgba(245,197,24,0.7), 0 20px 50px rgba(0,0,0,.5); }
+  }
+  .card.popular          { animation: neonBorder 2.5s ease-in-out infinite; }
+  @keyframes neonBorderRed {
+    0%,100% { box-shadow: 0 0 8px rgba(255,77,109,0.3), 0 20px 50px rgba(0,0,0,.5); }
+    50%     { box-shadow: 0 0 22px rgba(255,77,109,0.7), 0 20px 50px rgba(0,0,0,.5); }
+  }
+  .card.popular-likes    { animation: neonBorderRed 2.5s ease-in-out infinite; }
+  @keyframes neonBorderPurple {
+    0%,100% { box-shadow: 0 0 8px rgba(124,58,237,0.3), 0 20px 50px rgba(0,0,0,.5); }
+    50%     { box-shadow: 0 0 22px rgba(124,58,237,0.7), 0 20px 50px rgba(0,0,0,.5); }
+  }
+  .card.popular-comments { animation: neonBorderPurple 2.5s ease-in-out infinite; }
+  @keyframes neonBorderBlue {
+    0%,100% { box-shadow: 0 0 8px rgba(14,165,233,0.3), 0 20px 50px rgba(0,0,0,.5); }
+    50%     { box-shadow: 0 0 22px rgba(14,165,233,0.7), 0 20px 50px rgba(0,0,0,.5); }
+  }
+  .card.popular-views    { animation: neonBorderBlue 2.5s ease-in-out infinite; }
+
+  /* Buy button magnetic pulse */
+  @keyframes btnPulse {
+    0%,100% { transform: scale(1); }
+    50%     { transform: scale(1.03); }
+  }
+  .buy-btn { position: relative; overflow: hidden; }
+  .buy-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transform: translateX(-120%);
+    transition: none;
+  }
+  .buy-btn:hover::before {
+    transform: translateX(120%);
+    transition: transform 0.4s ease;
+  }
+
+  /* Section tab switch animation */
+  .section.active {
+    animation: sectionIn 0.4s cubic-bezier(0.23,1,0.32,1) both;
+  }
+  @keyframes sectionIn {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Spin wheel outer glow pulse */
+  @keyframes wheelGlow {
+    0%,100% { box-shadow: 0 0 0 5px rgba(255,255,255,.06), 0 0 40px rgba(168,85,247,.25), 0 20px 60px rgba(0,0,0,.6); }
+    50%     { box-shadow: 0 0 0 5px rgba(255,255,255,.08), 0 0 70px rgba(168,85,247,.55), 0 20px 60px rgba(0,0,0,.6); }
+  }
+  #spinCanvas { animation: wheelGlow 2s ease-in-out infinite; }
+
+  /* Brand badge glow */
+  @keyframes badgeShine {
+    0%,100% { border-color: rgba(245,197,24,0.3); }
+    50%     { border-color: rgba(245,197,24,0.8); box-shadow: 0 0 14px rgba(245,197,24,0.25); }
+  }
+  .brand-badge { animation: badgeShine 3s ease-in-out infinite, fadeDown 0.6s ease both; }
+
+</style>
+</head>
+<body>
+
+<!-- AUTH BAR -->
+<canvas id="auroraCanvas"></canvas>
+<div class="cursor-glow" id="cursorGlow"></div>
+<div class="orb" id="orb1" style="width:500px;height:500px;background:radial-gradient(circle,rgba(245,197,24,0.18),transparent 70%);left:10%;animation-duration:22s;animation-delay:0s;"></div>
+<div class="orb" id="orb2" style="width:400px;height:400px;background:radial-gradient(circle,rgba(168,85,247,0.15),transparent 70%);left:60%;animation-duration:28s;animation-delay:8s;"></div>
+<div class="orb" id="orb3" style="width:350px;height:350px;background:radial-gradient(circle,rgba(14,165,233,0.12),transparent 70%);left:30%;animation-duration:34s;animation-delay:14s;"></div>
+<canvas id="particleCanvas"></canvas>
+<div class="auth-bar" id="authBar">
+  <div class="auth-bar-user" id="authBarUser" style="display:none">
+    👤 <span id="authBarName"></span>
+  </div>
+  <button class="auth-bar-btn logout" id="logoutBtn" style="display:none" onclick="logout()">Sign Out</button>
+  <button class="auth-bar-btn" id="loginShowBtn" onclick="openAuth('login')">🔑 Login</button>
+  <button class="auth-bar-btn" id="registerShowBtn" onclick="openAuth('register')" style="background:var(--gold);color:#000;border-color:var(--gold)">🚀 Register</button>
+</div>
+<div class="hero">
+  <div class="hero-bg"></div>
+  <!-- Floating crowns -->
+  <div class="crown-float" style="top:18%;left:8%;font-size:22px;animation-duration:4.2s;animation-delay:0s">👑</div>
+  <div class="crown-float" style="top:30%;right:7%;font-size:18px;animation-duration:5.1s;animation-delay:1.2s">✨</div>
+  <div class="crown-float" style="top:60%;left:5%;font-size:16px;animation-duration:3.8s;animation-delay:0.7s">⭐</div>
+  <div class="crown-float" style="top:55%;right:6%;font-size:20px;animation-duration:4.7s;animation-delay:2s">👑</div>
+  <div class="king-badge">👑 King Store — #1 Trusted</div>
+  <div class="brand-badge">
+    <span class="dot"></span>
+    Live &amp; Trusted Store
+  </div>
+  <h1>👑 MOXDOOM<br>KING STORE</h1>
+  <p class="hero-sub">Followers • Likes • Comments • Views — <span>Real. Fast. Cheap.</span></p>
+  <a href="https://www.instagram.com/moxdoom?igsh=MTl1bGlpZnBxb3A5eQ==" target="_blank" class="insta-link">
+    <svg class="insta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+      <circle cx="12" cy="12" r="4"/>
+      <circle cx="17.5" cy="6.5" r="0.5" fill="white"/>
+    </svg>
+    @moxdoom
+  </a>
+</div>
+
+<!-- TAB NAV -->
+<div class="tabs-wrapper">
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="followers" onclick="switchTab('followers')">👥 Followers</button>
+    <button class="tab-btn"        data-tab="likes"     onclick="switchTab('likes')">❤️ Likes</button>
+    <button class="tab-btn"        data-tab="comments"  onclick="switchTab('comments')">💬 Comments</button>
+    <button class="tab-btn"        data-tab="views"     onclick="switchTab('views')">👁️ Views</button>
+    <button class="tab-btn spin-tab-btn" data-tab="spin" onclick="switchTab('spin')">🎰 Spin</button>
+  </div>
+</div>
+
+<!-- ════════════ FOLLOWERS ════════════ -->
+<div id="tab-followers" class="section active">
+<div class="packages-section">
+  <div class="divider followers reveal"></div>
+  <div class="section-title reveal">FOLLOWERS</div>
+  <p class="section-desc">Real accounts • Instant start • No password needed</p>
+  <div class="packages-grid followers-grid">
+
+    <div class="card">
+      <div class="card-icon">🌱</div>
+      <div class="card-amount">100</div>
+      <div class="card-label">Followers</div>
+      <ul class="card-features">
+        <li>Real Profiles</li>
+        <li>Instant Delivery</li>
+        <li>No Password</li>
+      </ul>
+      <div class="card-price">₹20 <span>/ one-time</span></div>
+      <button class="buy-btn" onclick="openModal('100 Followers','₹20')">Order Now</button>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">⚡</div>
+      <div class="card-amount">500</div>
+      <div class="card-label">Followers</div>
+      <ul class="card-features">
+        <li>Real Profiles</li>
+        <li>Instant Delivery</li>
+        <li>No Password</li>
+      </ul>
+      <div class="card-price">₹90 <span>/ one-time</span></div>
+      <button class="buy-btn" onclick="openModal('500 Followers','₹90')">Order Now</button>
+    </div>
+
+    <div class="card popular">
+      <div class="popular-badge">🔥 Popular</div>
+      <div class="card-icon">🚀</div>
+      <div class="card-amount">1,000</div>
+      <div class="card-label">Followers</div>
+      <ul class="card-features">
+        <li>Real Profiles</li>
+        <li>Instant Delivery</li>
+        <li>No Password</li>
+        <li>Priority Support</li>
+      </ul>
+      <div class="card-price">₹170 <span>/ one-time</span></div>
+      <button class="buy-btn" onclick="openModal('1,000 Followers','₹170')">Order Now</button>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">💎</div>
+      <div class="card-amount">5,000</div>
+      <div class="card-label">Followers</div>
+      <ul class="card-features">
+        <li>Real Profiles</li>
+        <li>Fast Delivery</li>
+        <li>No Password</li>
+        <li>Priority Support</li>
+      </ul>
+      <div class="card-price">₹800 <span>/ one-time</span></div>
+      <button class="buy-btn" onclick="openModal('5,000 Followers','₹800')">Order Now</button>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">👑</div>
+      <div class="card-amount">10,000</div>
+      <div class="card-label">Followers</div>
+      <ul class="card-features">
+        <li>Real Profiles</li>
+        <li>Fast Delivery</li>
+        <li>No Password</li>
+        <li>VIP Support</li>
+      </ul>
+      <div class="card-price">₹1,500 <span>/ one-time</span></div>
+      <button class="buy-btn" onclick="openModal('10,000 Followers','₹1,500')">Order Now</button>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- ════════════ LIKES ════════════ -->
+<div id="tab-likes" class="section">
+<div class="packages-section">
+  <div class="divider likes"></div>
+  <div class="section-title">LIKES</div>
+  <p class="section-desc">Boost any post instantly • Real accounts • Fast delivery</p>
+  <div class="packages-grid likes-grid">
+
+    <div class="card">
+      <div class="card-icon">❤️</div>
+      <div class="card-amount">100</div>
+      <div class="card-label">Likes</div>
+      <ul class="card-features">
+        <li>Real Accounts</li>
+        <li>Instant Delivery</li>
+        <li>Any Post</li>
+      </ul>
+      <div class="card-price">₹10 <span>/ one-time</span></div>
+      <button class="buy-btn" onclick="openModal('100 Likes','₹10')">Order Now</button>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">💞</div>
+      <div class="card-amount">500</div>
+      <div class="card-label">Likes</div>
+      <ul class="card-features">
+        <li>Real Accounts</li>
+        <li>Instant Delivery</li>
+        <li>Any Post</li>
+      </ul>
+      <div class="card-price">₹45 <span>/ one-time</span></div>
+      <button class="buy-btn" onclick="openModal('500 Likes','₹45')">Order Now</button>
+    </div>
+
+    <div class="card popular-likes">
+      <div class="popular-badge red">🔥 Popular</div>
+      <div class="card-icon">🔥</div>
+      <div class="card-amount">1,000</div>
+      <div class="card-label">Likes</div>
+      <ul class="card-features">
+        <li>Real Accounts</li>
+        <li>Instant Delivery</li>
+        <li>Any Post</li>
+        <li>Priority Support</li>
+      </ul>
+      <div class="card-price">₹85 <span>/ one-time</span></div>
+      <button class="buy-btn" onclick="openModal('1,000 Likes','₹85')">Order Now</button>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">💥</div>
+      <div class="card-amount">5,000</div>
+      <div class="card-label">Likes</div>
+      <ul class="card-features">
+        <li>Real Accounts</li>
+        <li>Fast Delivery</li>
+        <li>Any Post</li>
+        <li>VIP Support</li>
+      </ul>
+      <div class="card-price">₹400 <span>/ one-time</span></div>
+      <button class="buy-btn" onclick="openModal('5,000 Likes','₹400')">Order Now</button>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- ════════════ COMMENTS ════════════ -->
+<div id="tab-comments" class="section">
+<div class="packages-section">
+  <div class="divider comments"></div>
+  <div class="section-title">COMMENTS</div>
+  <p class="section-desc">Real comments on your posts • Boost engagement fast</p>
+  <div class="packages-grid comments-grid">
+
+    <div class="card">
+      <div class="card-icon">💬</div>
+      <div class="card-amount">100</div>
+      <div class="card-label">Comments</div>
+      <ul class="card-features">
+        <li>Real Accounts</li>
+        <li>Instant Delivery</li>
+        <li>Any Post</li>
+      </ul>
+      <div class="card-price">₹20 <span>/ one-time</span></div>
+      <button class="buy-btn" onclick="openModal('100 Comments','₹20')">Order Now</button>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🗣️</div>
+      <div class="card-amount">500</div>
+      <div class="card-label">Comments</div>
+      <ul class="card-features">
+        <li>Real Accounts</li>
+        <li>Instant Delivery</li>
+        <li>Any Post</li>
+      </ul>
+      <div class="card-price">₹90 <span>/ one-time</span></div>
+      <button class="buy-btn" onclick="openModal('500 Comments','₹90')">Order Now</button>
+    </div>
+
+    <div class="card popular-comments">
+      <div class="popular-badge purple">🔥 Popular</div>
+      <div class="card-icon">✨</div>
+      <div class="card-amount">1,000</div>
+      <div class="card-label">Comments</div>
+      <ul class="card-features">
+        <li>Real Accounts</li>
+        <li>Instant Delivery</li>
+        <li>Any Post</li>
+        <li>Priority Support</li>
+      </ul>
+      <div class="card-price">₹170 <span>/ one-time</span></div>
+      <button class="buy-btn" onclick="openModal('1,000 Comments','₹170')">Order Now</button>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🏆</div>
+      <div class="card-amount">5,000</div>
+      <div class="card-label">Comments</div>
+      <ul class="card-features">
+        <li>Real Accounts</li>
+        <li>Fast Delivery</li>
+        <li>Any Post</li>
+        <li>VIP Support</li>
+      </ul>
+      <div class="card-price">₹800 <span>/ one-time</span></div>
+      <button class="buy-btn" onclick="openModal('5,000 Comments','₹800')">Order Now</button>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- ════════════ VIEWS ════════════ -->
+<div id="tab-views" class="section">
+<div class="packages-section">
+  <div class="divider views"></div>
+  <div class="section-title">VIEWS</div>
+  <p class="section-desc">Reel &amp; video views • Skyrocket your reach instantly</p>
+  <div class="packages-grid views-grid">
+
+    <div class="card">
+      <div class="card-icon">📖</div>
+      <div class="card-amount">100</div>
+      <div class="card-label">Story Views</div>
+      <ul class="card-features">
+        <li>Story Views</li>
+        <li>Instant Delivery</li>
+        <li>Any Story</li>
+      </ul>
+      <div class="card-price">₹15 <span>/ one-time</span></div>
+      <button class="buy-btn" onclick="openModal('100 Story Views','₹15')">Order Now</button>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">👁️</div>
+      <div class="card-amount">1K</div>
+      <div class="card-label">Views</div>
+      <ul class="card-features">
+        <li>Reels &amp; Videos</li>
+        <li>Instant Delivery</li>
+        <li>Any Post</li>
+      </ul>
+      <div class="card-price">₹5 <span>/ one-time</span></div>
+      <button class="buy-btn" onclick="openModal('1,000 Views','₹5')">Order Now</button>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">📹</div>
+      <div class="card-amount">5K</div>
+      <div class="card-label">Views</div>
+      <ul class="card-features">
+        <li>Reels &amp; Videos</li>
+        <li>Instant Delivery</li>
+        <li>Any Post</li>
+      </ul>
+      <div class="card-price">₹22 <span>/ one-time</span></div>
+      <button class="buy-btn" onclick="openModal('5,000 Views','₹22')">Order Now</button>
+    </div>
+
+    <div class="card popular-views">
+      <div class="popular-badge blue">🔥 Popular</div>
+      <div class="card-icon">🎬</div>
+      <div class="card-amount">10K</div>
+      <div class="card-label">Views</div>
+      <ul class="card-features">
+        <li>Reels &amp; Videos</li>
+        <li>Instant Delivery</li>
+        <li>Any Post</li>
+        <li>Priority Support</li>
+      </ul>
+      <div class="card-price">₹40 <span>/ one-time</span></div>
+      <button class="buy-btn" onclick="openModal('10,000 Views','₹40')">Order Now</button>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🚀</div>
+      <div class="card-amount">50K</div>
+      <div class="card-label">Views</div>
+      <ul class="card-features">
+        <li>Reels &amp; Videos</li>
+        <li>Fast Delivery</li>
+        <li>Any Post</li>
+        <li>VIP Support</li>
+      </ul>
+      <div class="card-price">₹190 <span>/ one-time</span></div>
+      <button class="buy-btn" onclick="openModal('50,000 Views','₹190')">Order Now</button>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🌍</div>
+      <div class="card-amount">100K</div>
+      <div class="card-label">Views</div>
+      <ul class="card-features">
+        <li>Reels &amp; Videos</li>
+        <li>Gradual Delivery</li>
+        <li>Any Post</li>
+        <li>VIP Support</li>
+      </ul>
+      <div class="card-price">₹370 <span>/ one-time</span></div>
+      <button class="buy-btn" onclick="openModal('100,000 Views','₹370')">Order Now</button>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- ════════════ SPIN WHEEL ════════════ -->
+<div id="tab-spin" class="section">
+<div class="packages-section" style="max-width:560px;margin:0 auto;padding:40px 20px 80px;">
+  <div class="divider" style="background:linear-gradient(90deg,#a855f7,transparent);"></div>
+  <div class="section-title">🎰 SPIN &amp; WIN</div>
+  <p class="section-desc">Try your luck — spin once per day to win prizes!</p>
+
+  <!-- Locked state (shown when not logged in) -->
+  <div class="spin-locked" id="spinLockedBox" style="display:none">
+    <div class="spin-locked-icon">🔒</div>
+    <h3>LOGIN TO SPIN</h3>
+    <p>Create a free account or login to spin the wheel and win prizes!</p>
+    <button class="spin-locked-btn" onclick="openAuth('register')">🚀 Register Free</button>
+    &nbsp;
+    <button class="spin-locked-btn" style="background:var(--dark3);border:1px solid rgba(255,255,255,.2)" onclick="openAuth('login')">🔑 Login</button>
+  </div>
+
+  <div id="spinWheelBox">
+  <div class="spin-wrap">
+    <!-- Pointer -->
+    <div class="spin-pointer">▼</div>
+    <!-- Canvas wheel -->
+    <canvas id="spinCanvas" width="320" height="320"></canvas>
+    <!-- Center cap -->
+    <div class="spin-cap">🎯</div>
+  </div>
+
+  <button class="spin-btn" id="spinBtn" onclick="doSpin()">🎰 SPIN NOW</button>
+  <p class="spin-hint" id="spinHint">You get 1 free spin per day!</p>
+
+  <!-- Result card (hidden until spin) -->
+  <div class="spin-result" id="spinResult" style="display:none">
+    <div class="spin-result-icon" id="spinResultIcon"></div>
+    <div class="spin-result-title" id="spinResultTitle"></div>
+    <div class="spin-result-sub" id="spinResultSub"></div>
+    <a id="spinWaBtn" href="#" target="_blank" class="spin-claim-btn" style="display:none">💬 Claim on WhatsApp</a>
+  </div>
+  </div><!-- /spinWheelBox -->
+</div>
+</div>
+<div class="how-section">
+  <div class="divider followers"></div>
+  <div class="section-title">HOW IT WORKS</div>
+  <p class="section-desc">Simple 3-step process</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-title">Choose Service</div>
+      <div class="step-desc">Pick followers, likes, comments, or views and select your package.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-title">Send Payment</div>
+      <div class="step-desc">Pay via WhatsApp or email with your Instagram username &amp; post link.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-title">Watch it Grow</div>
+      <div class="step-desc">Delivery starts within minutes. No password required.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PAYMENT -->
+<div class="payment-section">
+  <div class="divider followers"></div>
+  <div class="section-title">PAYMENT INFO</div>
+  <p class="section-desc">Pay &amp; send screenshot to confirm your order</p>
+  <div class="payment-cards">
+    <div class="pay-card">
+      <div class="pay-icon">💬</div>
+      <div class="pay-label">WhatsApp</div>
+      <div class="pay-value"><a href="https://wa.me/919957391841" target="_blank">+91 99573 91841</a></div>
+    </div>
+    <div class="pay-card">
+      <div class="pay-icon">📧</div>
+      <div class="pay-label">Email</div>
+      <div class="pay-value"><a href="mailto:Sansaito873@gmail.com">Sansaito873@gmail.com</a></div>
+    </div>
+    <div class="pay-card">
+      <div class="pay-icon">📸</div>
+      <div class="pay-label">Instagram</div>
+      <div class="pay-value"><a href="https://www.instagram.com/moxdoom?igsh=MTl1bGlpZnBxb3A5eQ==" target="_blank">@moxdoom</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-box">
+    <h2>READY TO GROW?</h2>
+    <p>Contact us on WhatsApp or email. Send your Instagram username, chosen package &amp; post link — we'll handle the rest!</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/919957391841?text=Hi%20MoxDoom!%20I%20want%20to%20order%20Instagram%20growth." target="_blank" class="cta-btn whatsapp">💬 WhatsApp Us</a>
+      <a href="mailto:Sansaito873@gmail.com?subject=Instagram%20Growth%20Order" class="cta-btn email">✉️ Email Us</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 MoxDoom Store &nbsp;|&nbsp;
+  <a href="https://www.instagram.com/moxdoom?igsh=MTl1bGlpZnBxb3A5eQ==" target="_blank">@moxdoom</a>
+</footer>
+
+<!-- ════ AUTH MODAL ════ -->
+<div class="auth-overlay" id="authOverlay">
+  <div class="auth-box">
+    <button class="auth-close-btn" onclick="closeAuth()">✕</button>
+    <div class="auth-logo">MOXDOOM</div>
+    <p class="auth-tagline">Your Instagram Growth Dashboard</p>
+    <div class="auth-tabs">
+      <button class="auth-tab active" id="atLogin"   onclick="switchAuthTab('login')">Login</button>
+      <button class="auth-tab"        id="atRegister" onclick="switchAuthTab('register')">Register</button>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <div class="auth-form active" id="formLogin">
+      <div class="auth-field">
+        <label>Username</label>
+        <input type="text" id="loginUser" placeholder="Enter your username">
+      </div>
+      <div class="auth-field">
+        <label>Password</label>
+        <input type="password" id="loginPass" placeholder="Enter your password">
+      </div>
+      <label class="auth-remember">
+        <input type="checkbox" id="rememberMe" checked>
+        Remember me on this device
+      </label>
+      <button class="auth-submit" onclick="doLogin()">Login →</button>
+      <div class="auth-msg" id="loginMsg"></div>
+    </div>
+
+    <!-- REGISTER FORM -->
+    <div class="auth-form" id="formRegister">
+      <div class="auth-field">
+        <label>Username</label>
+        <input type="text" id="regUser" placeholder="Choose a username">
+      </div>
+      <div class="auth-field">
+        <label>Password</label>
+        <input type="password" id="regPass" placeholder="Create a password">
+      </div>
+      <button class="auth-submit" onclick="doRegister()">Create Account →</button>
+      <div class="auth-msg" id="registerMsg"></div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal">
+    <h3>PLACE ORDER 🎯</h3>
+    <p class="modal-pkg" id="modalPkg"></p>
+    <div class="modal-steps">
+      <div class="modal-step">
+        <div class="modal-step-num">1</div>
+        <div class="modal-step-text">Send payment amount via <strong>UPI / any method</strong></div>
+      </div>
+      <div class="modal-step">
+        <div class="modal-step-num">2</div>
+        <div class="modal-step-text">Send your <strong>Instagram username</strong> + post link (if needed) + payment screenshot on WhatsApp <strong>+91 99573 91841</strong></div>
+      </div>
+      <div class="modal-step">
+        <div class="modal-step-num">3</div>
+        <div class="modal-step-text">Delivery starts <strong>within minutes</strong> of confirmation!</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:16px;">
+      <a id="waLink" href="#" target="_blank" style="padding:11px 22px;background:#25D366;color:#000;font-weight:700;font-size:13px;border-radius:10px;text-decoration:none;">💬 Open WhatsApp</a>
+    </div>
+    <button class="modal-close" onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<script>
+  /* ══════════════════════════════════
+     DATA STORE (localStorage-based)
+  ══════════════════════════════════ */
+  const DB = {
+    get users()  { try { return JSON.parse(localStorage.getItem('md_users') || '{}'); } catch(e){ return {}; } },
+    set users(v) { localStorage.setItem('md_users', JSON.stringify(v)); },
+  };
+
+  // Seed admin user if not present
+  (function seedAdmin() {
+    const u = DB.users;
+    if (!u['admin']) {
+      u['admin'] = { password: 'admin123', role: 'admin', joined: Date.now() };
+      DB.users = u;
+    }
+  })();
+
+  // ── FIX: Validate saved session against DB on load ──
+  let currentUser = (() => {
+    const saved = localStorage.getItem('md_session') || sessionStorage.getItem('md_session');
+    if (saved && DB.users[saved]) return saved;
+    localStorage.removeItem('md_session');
+    sessionStorage.removeItem('md_session');
+    return null;
+  })();
+
+  /* ══════════════════════════════════
+     AUTH FUNCTIONS
+  ══════════════════════════════════ */
+  function openAuth(tab) {
+    document.getElementById('authOverlay').classList.add('active');
+    switchAuthTab(tab || 'login');
+  }
+  function closeAuth() {
+    document.getElementById('authOverlay').classList.remove('active');
+    clearMsgs();
+  }
+  function switchAuthTab(tab) {
+    document.getElementById('formLogin').classList.toggle('active', tab === 'login');
+    document.getElementById('formRegister').classList.toggle('active', tab === 'register');
+    document.getElementById('atLogin').classList.toggle('active', tab === 'login');
+    document.getElementById('atRegister').classList.toggle('active', tab === 'register');
+    clearMsgs();
+  }
+  function clearMsgs() {
+    ['loginMsg','registerMsg'].forEach(id => {
+      const el = document.getElementById(id);
+      el.style.display = 'none'; el.textContent = '';
+    });
+  }
+  function showMsg(id, text, type) {
+    const el = document.getElementById(id);
+    el.textContent = text;
+    el.className = 'auth-msg ' + type;
+    el.style.display = 'block';
+  }
+
+  function doLogin() {
+    const user = document.getElementById('loginUser').value.trim().toLowerCase();
+    const pass = document.getElementById('loginPass').value;
+    if (!user || !pass) { showMsg('loginMsg','Please fill all fields.','err'); return; }
+    const users = DB.users;
+    if (!users[user]) { showMsg('loginMsg','Account not found.','err'); return; }
+    if (users[user].password !== pass) { showMsg('loginMsg','Wrong password.','err'); return; }
+    showMsg('loginMsg','✓ Welcome back, ' + user + '!','ok');
+
+    // ── FIX: Remember Me — use localStorage vs sessionStorage ──
+    const remember = document.getElementById('rememberMe') && document.getElementById('rememberMe').checked;
+    setTimeout(() => {
+      currentUser = user;
+      if (remember) {
+        localStorage.setItem('md_session', user);
+        sessionStorage.removeItem('md_session');
+      } else {
+        sessionStorage.setItem('md_session', user);
+        localStorage.removeItem('md_session');
+      }
+      closeAuth();
+      updateAuthBar();
+      updateSpinAccess();
+    }, 800);
+  }
+
+  function doRegister() {
+    const user = document.getElementById('regUser').value.trim().toLowerCase().replace(/\s+/g,'');
+    const pass = document.getElementById('regPass').value;
+    if (!user || !pass) { showMsg('registerMsg','Please fill username and password.','err'); return; }
+    if (user.length < 3) { showMsg('registerMsg','Username must be at least 3 characters.','err'); return; }
+    if (pass.length < 4) { showMsg('registerMsg','Password must be at least 4 characters.','err'); return; }
+    const users = DB.users;
+    if (users[user]) { showMsg('registerMsg','Username already taken.','err'); return; }
+
+    users[user] = { password: pass, role: 'user', joined: Date.now() };
+    DB.users = users;
+    showMsg('registerMsg','✓ Account created!','ok');
+    setTimeout(() => {
+      currentUser = user;
+      localStorage.setItem('md_session', user);
+      closeAuth();
+      updateAuthBar();
+      updateSpinAccess();
+    }, 1000);
+  }
+
+  function logout() {
+    currentUser = null;
+    localStorage.removeItem('md_session');
+    sessionStorage.removeItem('md_session');
+    updateAuthBar();
+    updateSpinAccess();
+  }
+
+  function updateAuthBar() {
+    const loggedIn = !!currentUser;
+    document.getElementById('loginShowBtn').style.display    = loggedIn ? 'none' : '';
+    document.getElementById('registerShowBtn').style.display = loggedIn ? 'none' : '';
+    document.getElementById('logoutBtn').style.display       = loggedIn ? '' : 'none';
+    document.getElementById('authBarUser').style.display     = loggedIn ? '' : 'none';
+    if (loggedIn) {
+      document.getElementById('authBarName').textContent = currentUser;
+    }
+  }
+
+  /* ══════════════════════════════════
+     EXISTING FUNCTIONS
+  ══════════════════════════════════ */
+  function switchTab(tab) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + tab).classList.add('active');
+    document.querySelector('[data-tab="' + tab + '"]').classList.add('active');
+    if (tab === 'spin') updateSpinAccess();
+  }
+
+  function openModal(pkg, price) {
+    document.getElementById('modalPkg').textContent = pkg + ' — ' + price;
+    const msg = encodeURIComponent('Hi MoxDoom! I want to order ' + pkg + ' for ' + price + '.\nMy Instagram username: ');
+    document.getElementById('waLink').href = 'https://wa.me/919957391841?text=' + msg;
+    document.getElementById('modalOverlay').classList.add('active');
+  }
+
+  // ── FIX: closeModal with/without event ──
+  function closeModal(e) {
+    if (e && e.target && e.target !== document.getElementById('modalOverlay')) return;
+    document.getElementById('modalOverlay').classList.remove('active');
+  }
+
+  /* ══════════════════════════════════
+     SPIN WHEEL
+  ══════════════════════════════════ */
+  const SPIN_SEGMENTS = [
+    { label: '₹1 Cash',        icon: '💵', color: '#f5c518', bg: '#1a1500', prize: 'cash_1',       claimable: true  },
+    { label: 'Better Luck',     icon: '😢', color: '#444',    bg: '#111',    prize: 'none',          claimable: false },
+    { label: '₹10 Cash',       icon: '💰', color: '#00e676', bg: '#001a0a', prize: 'cash_10',      claimable: true  },
+    { label: '50 Followers',    icon: '👥', color: '#f5c518', bg: '#1a1500', prize: 'followers_50', claimable: true  },
+    { label: 'Better Luck',     icon: '😢', color: '#444',    bg: '#111',    prize: 'none',          claimable: false },
+    { label: '20 Likes',        icon: '❤️', color: '#ff4d6d', bg: '#1a0008', prize: 'likes_20',     claimable: true  },
+  ];
+
+  const TOTAL = SPIN_SEGMENTS.length;
+  const ARC   = (2 * Math.PI) / TOTAL;
+  let   wheelAngle = 0;
+  let   spinning   = false;
+
+  function drawWheel(angle) {
+    const canvas = document.getElementById('spinCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const cx  = canvas.width  / 2;
+    const cy  = canvas.height / 2;
+    const r   = cx - 4;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    SPIN_SEGMENTS.forEach((seg, i) => {
+      const start = angle + i * ARC - Math.PI / 2;
+      const end   = start + ARC;
+
+      // Slice fill
+      ctx.beginPath();
+      ctx.moveTo(cx, cy);
+      ctx.arc(cx, cy, r, start, end);
+      ctx.closePath();
+      ctx.fillStyle = seg.bg;
+      ctx.fill();
+
+      // Slice border
+      ctx.beginPath();
+      ctx.moveTo(cx, cy);
+      ctx.arc(cx, cy, r, start, end);
+      ctx.closePath();
+      ctx.strokeStyle = seg.color;
+      ctx.lineWidth = 2.5;
+      ctx.stroke();
+
+      // Icon
+      const iconAngle = start + ARC / 2;
+      const iconR     = r * 0.62;
+      ctx.save();
+      ctx.translate(cx + Math.cos(iconAngle) * iconR, cy + Math.sin(iconAngle) * iconR);
+      ctx.font = '22px serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(seg.icon, 0, 0);
+      ctx.restore();
+
+      // Label
+      const textAngle = start + ARC / 2;
+      const textR     = r * 0.82;
+      ctx.save();
+      ctx.translate(cx + Math.cos(textAngle) * textR, cy + Math.sin(textAngle) * textR);
+      ctx.rotate(textAngle + Math.PI / 2);
+      ctx.font = 'bold 11px Outfit, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillStyle = seg.color;
+      ctx.fillText(seg.label, 0, 0);
+      ctx.restore();
+    });
+
+    // Outer ring
+    ctx.beginPath();
+    ctx.arc(cx, cy, r, 0, 2 * Math.PI);
+    ctx.strokeStyle = 'rgba(168,85,247,0.4)';
+    ctx.lineWidth = 4;
+    ctx.stroke();
+  }
+
+  // ── FIX: Spin date tracked per-user ──
+  function getSpinKey() {
+    return 'md_spin_date_' + (currentUser || '_guest');
+  }
+  function canSpinToday() {
+    const last = localStorage.getItem(getSpinKey());
+    const today = new Date().toDateString();
+    return last !== today;
+  }
+  function markSpunToday() {
+    localStorage.setItem(getSpinKey(), new Date().toDateString());
+  }
+
+  // ── FIX: Show/hide spin wheel vs login prompt ──
+  function updateSpinAccess() {
+    const locked  = document.getElementById('spinLockedBox');
+    const wheel   = document.getElementById('spinWheelBox');
+    if (!locked || !wheel) return;
+    if (!currentUser) {
+      locked.style.display = 'block';
+      wheel.style.display  = 'none';
+    } else {
+      locked.style.display = 'none';
+      wheel.style.display  = 'block';
+      // Re-init wheel state for current user
+      const spinBtn  = document.getElementById('spinBtn');
+      const spinHint = document.getElementById('spinHint');
+      if (!canSpinToday()) {
+        spinBtn.disabled = true;
+        spinHint.textContent = '✓ You already spun today. Come back tomorrow!';
+      } else {
+        spinBtn.disabled = false;
+        spinHint.textContent = 'You get 1 free spin per day!';
+      }
+      drawWheel(wheelAngle);
+    }
+  }
+
+  function initSpin() {
+    drawWheel(0);
+    updateSpinAccess();
+  }
+
+  function doSpin() {
+    if (!currentUser) { openAuth('login'); return; }
+    if (spinning || !canSpinToday()) return;
+    spinning = true;
+    document.getElementById('spinBtn').disabled = true;
+    document.getElementById('spinResult').style.display = 'none';
+
+    // Pick winning segment
+    const winIndex = Math.floor(Math.random() * TOTAL);
+    const targetSegCenter = -(winIndex * ARC + ARC / 2);
+    const extraSpins      = (5 + Math.floor(Math.random() * 4)) * 2 * Math.PI;
+    const targetAngle     = targetSegCenter + extraSpins;
+
+    const duration  = 4500;
+    const startTime = performance.now();
+    const startAngle = wheelAngle;
+
+    function easeOut(t) { return 1 - Math.pow(1 - t, 4); }
+
+    function animate(now) {
+      const elapsed  = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      wheelAngle = startAngle + (targetAngle - startAngle) * easeOut(progress);
+      drawWheel(wheelAngle);
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        wheelAngle = targetAngle % (2 * Math.PI);
+        spinning = false;
+        markSpunToday();
+        document.getElementById('spinHint').textContent = '✓ You already spun today. Come back tomorrow!';
+        showSpinResult(SPIN_SEGMENTS[winIndex]);
+      }
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  function showSpinResult(seg) {
+    const el    = document.getElementById('spinResult');
+    const waBtn = document.getElementById('spinWaBtn');
+    document.getElementById('spinResultIcon').textContent  = seg.icon;
+    document.getElementById('spinResultTitle').textContent = seg.label;
+
+    if (seg.claimable) {
+      document.getElementById('spinResultSub').textContent = '🎉 You won! Contact us on WhatsApp to claim your prize.';
+      const msg = encodeURIComponent('Hi MoxDoom! I just spun the wheel and won: ' + seg.label + '. I want to claim my prize! My Instagram username: ');
+      waBtn.href = 'https://wa.me/919957391841?text=' + msg;
+      waBtn.style.display = 'inline-flex';
+      launchParticles(); // ✨ burst on win
+    } else {
+      document.getElementById('spinResultSub').textContent = 'Better luck next time — try again tomorrow! 🙏';
+      waBtn.style.display = 'none';
+    }
+
+    el.style.display = 'block';
+  }
+
+  /* ══════════════════════════════════
+     PARTICLE BURST (win celebration)
+  ══════════════════════════════════ */
+  function launchParticles() {
+    const canvas = document.getElementById('particleCanvas');
+    if (!canvas) return;
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+    canvas.style.display = 'block';
+    const ctx = canvas.getContext('2d');
+
+    const colors = ['#f5c518','#ffe066','#a855f7','#00e676','#ff4d6d','#fff'];
+    const particles = Array.from({length: 120}, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height * 0.6,
+      vx: (Math.random() - 0.5) * 6,
+      vy: (Math.random() * -8) - 2,
+      r: Math.random() * 7 + 3,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      alpha: 1,
+      rot: Math.random() * Math.PI * 2,
+      rotV: (Math.random() - 0.5) * 0.2,
+    }));
+
+    let frame = 0;
+    function tick() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      frame++;
+      particles.forEach(p => {
+        p.x  += p.vx;
+        p.y  += p.vy;
+        p.vy += 0.18; // gravity
+        p.alpha -= 0.012;
+        p.rot += p.rotV;
+        if (p.alpha <= 0) return;
+        ctx.save();
+        ctx.globalAlpha = Math.max(0, p.alpha);
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rot);
+        ctx.fillStyle = p.color;
+        ctx.fillRect(-p.r / 2, -p.r / 2, p.r, p.r * 1.6);
+        ctx.restore();
+      });
+      if (frame < 160) requestAnimationFrame(tick);
+      else { ctx.clearRect(0,0,canvas.width,canvas.height); canvas.style.display='none'; }
+    }
+    requestAnimationFrame(tick);
+  }
+
+
+  /* ══════════════════════════════════
+     HYPER ANIMATION ENGINE
+  ══════════════════════════════════ */
+
+  // ── Aurora background canvas ──
+  (function initAurora() {
+    const canvas = document.getElementById('auroraCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let t = 0;
+
+    function resize() {
+      canvas.width  = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    function drawAurora() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const W = canvas.width, H = canvas.height;
+
+      // Orb 1 – gold
+      const g1 = ctx.createRadialGradient(
+        W * (0.2 + 0.15 * Math.sin(t * 0.0007)),
+        H * (0.3 + 0.1  * Math.cos(t * 0.0005)),
+        0,
+        W * (0.2 + 0.15 * Math.sin(t * 0.0007)),
+        H * (0.3 + 0.1  * Math.cos(t * 0.0005)),
+        W * 0.45
+      );
+      g1.addColorStop(0, 'rgba(245,197,24,0.12)');
+      g1.addColorStop(1, 'transparent');
+      ctx.fillStyle = g1;
+      ctx.fillRect(0, 0, W, H);
+
+      // Orb 2 – purple
+      const g2 = ctx.createRadialGradient(
+        W * (0.75 + 0.12 * Math.cos(t * 0.0006)),
+        H * (0.25 + 0.15 * Math.sin(t * 0.0008)),
+        0,
+        W * (0.75 + 0.12 * Math.cos(t * 0.0006)),
+        H * (0.25 + 0.15 * Math.sin(t * 0.0008)),
+        W * 0.38
+      );
+      g2.addColorStop(0, 'rgba(168,85,247,0.10)');
+      g2.addColorStop(1, 'transparent');
+      ctx.fillStyle = g2;
+      ctx.fillRect(0, 0, W, H);
+
+      // Orb 3 – blue
+      const g3 = ctx.createRadialGradient(
+        W * (0.5  + 0.18 * Math.sin(t * 0.0004)),
+        H * (0.75 + 0.08 * Math.cos(t * 0.0009)),
+        0,
+        W * (0.5  + 0.18 * Math.sin(t * 0.0004)),
+        H * (0.75 + 0.08 * Math.cos(t * 0.0009)),
+        W * 0.35
+      );
+      g3.addColorStop(0, 'rgba(14,165,233,0.08)');
+      g3.addColorStop(1, 'transparent');
+      ctx.fillStyle = g3;
+      ctx.fillRect(0, 0, W, H);
+
+      t++;
+      requestAnimationFrame(drawAurora);
+    }
+    drawAurora();
+  })();
+
+  // ── Cursor glow follow ──
+  (function initCursor() {
+    const glow = document.getElementById('cursorGlow');
+    if (!glow) return;
+    let mx = -999, my = -999;
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      glow.style.left = mx + 'px';
+      glow.style.top  = my + 'px';
+    });
+  })();
+
+  // ── 3D card tilt on mouse move ──
+  (function initCardTilt() {
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width  - 0.5) * 14;
+        const y = ((e.clientY - rect.top)  / rect.height - 0.5) * 14;
+        card.style.transform = `translateY(-6px) rotateX(${-y}deg) rotateY(${x}deg)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+  })();
+
+  // ── Scroll reveal ──
+  (function initScrollReveal() {
+    // Add reveal to all cards, steps, pay-cards, section titles
+    const targets = document.querySelectorAll(
+      '.card, .step, .pay-card, .section-title, .section-desc, .divider, .cta-box, .spin-wrap, .spin-btn, .spin-result'
+    );
+    targets.forEach((el, i) => {
+      el.classList.add('reveal');
+      el.style.transitionDelay = (i % 6) * 0.07 + 's';
+    });
+
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  })();
+
+  // ── Floating number counter on brand badge ──
+  (function initCountUp() {
+    // Animate card-amount numbers on scroll into view
+    const amounts = document.querySelectorAll('.card-amount');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const el = e.target;
+          const raw = el.textContent.replace(/[^0-9KM]/g, '');
+          if (!raw || el.dataset.counted) return;
+          el.dataset.counted = '1';
+          const isK = el.textContent.includes('K');
+          const isM = el.textContent.includes('M');
+          const multiplier = isK ? 1000 : isM ? 1000000 : 1;
+          const target = parseFloat(raw) * (isK || isM ? 1 : 1);
+          const displayMultiplier = isK ? 'K' : isM ? 'M' : '';
+          let start = 0, dur = 900, t0 = null;
+          function step(t) {
+            if (!t0) t0 = t;
+            const prog = Math.min((t - t0) / dur, 1);
+            const ease = 1 - Math.pow(1 - prog, 3);
+            const val = Math.round(target * ease);
+            // Format with comma if large number
+            el.textContent = val >= 1000 ? val.toLocaleString() + (displayMultiplier||'') : val + (displayMultiplier||'');
+            if (prog < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+          io.unobserve(el);
+        }
+      });
+    }, { threshold: 0.3 });
+    amounts.forEach(el => io.observe(el));
+  })();
+
+  // ── Section switch with ripple ──
+  const _originalSwitchTab = switchTab;
+  // Patch tab switching with stagger re-reveal
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Re-trigger reveal on cards in new section after switch
+      setTimeout(() => {
+        document.querySelectorAll('.section.active .card, .section.active .step').forEach((el, i) => {
+          el.classList.remove('visible');
+          el.style.transitionDelay = i * 0.06 + 's';
+          setTimeout(() => el.classList.add('visible'), 30);
+        });
+      }, 50);
+    });
+  });
+
+  // Draw wheel on load
+  window.addEventListener('load', initSpin);
+
+  // Init
+  updateAuthBar();
+</script>
+</body>
+</html>
